@@ -1,0 +1,28 @@
+{
+  "name": "11ty-reveal",
+  "version": "1.0.0",
+  "description": "Eleventy Starter Repo for Reveal.js slide decks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "keywords": [
+    "eleventy",
+    "11ty",
+    "reveal",
+    "slides",
+    "reveal.js"
+  ],
+  "author": "James Steinbach",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "markdown-it": "^10.0.0",
+    "markdown-it-highlightjs": "^3.1.0"
+  },
+  "dependencies": {
+    "reveal.js": "^3.9.2"
+  }
+}
