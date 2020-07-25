@@ -1,1 +1,1 @@
-## Accessibility: HTML
+## <span class="h1">HTML</span> Accessibility

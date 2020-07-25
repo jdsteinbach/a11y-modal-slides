@@ -1,7 +1,6 @@
 // Markdown
 const markdownIt = require('markdown-it')
 const markdownItHighlightJS = require('markdown-it-highlightjs')
-const markdownItFencedMark = require('./utils/markdown-it-fenced-mark')
 const mdOptions = {
   html: true,
   breaks: true,
@@ -41,7 +40,7 @@ module.exports = eleventyConfig => {
     return keys.join(' ');
   });
 
-  eleventyConfig.setLibrary('md', markdownIt(mdOptions).use(markdownItHighlightJS).use(markdownItFencedMark));
+  eleventyConfig.setLibrary('md', markdownIt(mdOptions).use(markdownItHighlightJS));
 
   eleventyConfig.addPassthroughCopy({
     './node_modules/reveal.js/css/': 'css',
