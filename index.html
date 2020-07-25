@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <title>Modals for Everyone</title>
-    <meta name="description" content="Here's what this deck is about.">
+    <meta name="description" content="How to build accessible modal dialogs with HTML, JS, and CSS">
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/reveal.css">
@@ -60,6 +60,12 @@
 </section>
 
         
+          <section data-background="images/inception.gif">
+  <h1 style="font-size:6.7em" aria-hidden="true">🚫</h1>
+
+</section>
+
+        
           <section >
   <h3>Other UI Patterns</h3>
 <ul>
@@ -73,7 +79,7 @@
 
         
           <section >
-  <h2>Accessibility: HTML</h2>
+  <h2><span class="h1">HTML</span> Accessibility</h2>
 
 </section>
 
@@ -131,7 +137,10 @@
   <h3>Visibility: Buttons</h3>
 <p>Close Trigger, in Modal</p>
 <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>
-  Close {Modal Name}
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"screen-reader-only"</span>&gt;</span>
+    Close {Modal Name}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
 
@@ -142,7 +151,9 @@
   <h3>Visibility: Buttons</h3>
 <p>Scrim (optional), outside of Modal</p>
 <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
-  Close {Modal Name}
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"screen-reader-only"</span>&gt;</span>
+    Close {Modal Name}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
 
@@ -150,7 +161,7 @@
 
         
           <section >
-  <h2>Interactivity: JS</h2>
+  <h2><span class="h1">JavaScript</span> Interactivity</h2>
 
 </section>
 
@@ -194,14 +205,24 @@
         
           <section >
   <pre><code class="hljs language-js"><span class="hljs-keyword">const</span> openModal = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-  m.removeAttribute(<span class="hljs-string">'aria-hidden'</span>)
-  m.removeAttribute(<span class="hljs-string">'inert'</span>)
+  modal.removeAttribute(<span class="hljs-string">'aria-hidden'</span>)
+  modal.removeAttribute(<span class="hljs-string">'inert'</span>)
 }
 <span class="hljs-keyword">const</span> closeModal = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-  m.setAttribute(<span class="hljs-string">'aria-hidden'</span>, <span class="hljs-string">'true'</span>)
-  m.setAttribute(<span class="hljs-string">'inert'</span>, <span class="hljs-literal">true</span>)
+  modal.setAttribute(<span class="hljs-string">'aria-hidden'</span>, <span class="hljs-string">'true'</span>)
+  modal.setAttribute(<span class="hljs-string">'inert'</span>, <span class="hljs-literal">true</span>)
 }
 </code></pre>
+
+</section>
+
+        
+          <section >
+  <h3>Close Events</h3>
+<ul>
+<li>click outside the modal <br/>(or <code>&lt;button&gt;</code> scrim)</li>
+<li>Escape <code>keyup</code> event</li>
+</ul>
 
 </section>
 
@@ -218,22 +239,7 @@
 
         
           <section >
-  <h3>Outer Click</h3>
-<p>While open, listen for clicks outside the modal and close it.</p>
-<p><em>Alternative to <code>&lt;button&gt;</code> scrim</em></p>
-
-</section>
-
-        
-          <section >
-  <h3>Keyboard Close</h3>
-<p>While open, listen for <code>Escape</code> keyup to close.</p>
-
-</section>
-
-        
-          <section >
-  <h2>Visual Styles: CSS</h2>
+  <h2><span class="h1">CSS</span> Visual Styles</h2>
 
 </section>
 
