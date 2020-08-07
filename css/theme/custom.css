@@ -73,29 +73,58 @@ section.has-light-background, section.has-light-background h1, section.has-light
 .reveal section p:first-child:last-child {
   font-size: 1.6em;
 }
-.reveal section .hljs-keyword, .reveal section .hljs-built_in, .reveal section .hljs-type, .reveal section .hljs-literal, .reveal section .hljs-number, .reveal section .hljs-regexp, .reveal section .hljs-string, .reveal section .hljs-subst, .reveal section .hljs-symbol, .reveal section .hljs-class, .reveal section .hljs-function, .reveal section .hljs-title, .reveal section .hljs-params {
+.reveal .hljs-keyword, .reveal .hljs-built_in, .reveal .hljs-type, .reveal .hljs-literal, .reveal .hljs-number, .reveal .hljs-regexp, .reveal .hljs-string, .reveal .hljs-subst, .reveal .hljs-symbol, .reveal .hljs-class, .reveal .hljs-function, .reveal .hljs-title, .reveal .hljs-params {
   color: #17C37B;
 }
-.reveal section .hljs-comment, .reveal section .hljs-doctag, .reveal section .hljs-meta, .reveal section .hljs-meta-keyword, .reveal section .hljs-meta-string {
+.reveal .hljs-comment, .reveal .hljs-doctag, .reveal .hljs-meta, .reveal .hljs-meta-keyword, .reveal .hljs-meta-string {
   color: rgba(255, 208, 7, 0.6);
 }
-.reveal section .hljs-section, .reveal section .hljs-tag, .reveal section .hljs-name, .reveal section .hljs-builtin-name, .reveal section .hljs-attr, .reveal section .hljs-attribute, .reveal section .hljs-variable {
+.reveal .hljs-section, .reveal .hljs-tag, .reveal .hljs-name, .reveal .hljs-builtin-name, .reveal .hljs-attr, .reveal .hljs-attribute, .reveal .hljs-variable {
   color: rgba(255, 255, 255, 0.8);
 }
-.reveal section .hljs-bullet, .reveal section .hljs-code, .reveal section .hljs-emphasis, .reveal section .hljs-strong, .reveal section .hljs-formula, .reveal section .hljs-link, .reveal section .hljs-quote {
+.reveal .hljs-bullet, .reveal .hljs-code, .reveal .hljs-emphasis, .reveal .hljs-strong, .reveal .hljs-formula, .reveal .hljs-link, .reveal .hljs-quote {
   color: rgba(23, 195, 123, 0.8);
 }
-.reveal section .hljs-selector-tag, .reveal section .hljs-selector-id, .reveal section .hljs-selector-class, .reveal section .hljs-selector-attr, .reveal section .hljs-selector-pseudo {
+.reveal .hljs-selector-tag, .reveal .hljs-selector-id, .reveal .hljs-selector-class, .reveal .hljs-selector-attr, .reveal .hljs-selector-pseudo {
   color: rgba(255, 208, 7, 0.8);
 }
-.reveal section .hljs-template-tag, .reveal section .hljs-template-variable {
+.reveal .hljs-template-tag, .reveal .hljs-template-variable {
   color: white;
 }
-.reveal section .hljs-addition, .reveal section .hljs-deletion {
+.reveal .hljs-addition, .reveal .hljs-deletion {
   color: rgba(23, 195, 123, 0.6);
 }
-.reveal section .hljs-operator, .reveal section .hljs-pattern-match, .reveal section .hljs-typing, .reveal section .hljs-constructor, .reveal section .hljs-module-access, .reveal section .hljs-module {
+.reveal .hljs-operator, .reveal .hljs-pattern-match, .reveal .hljs-typing, .reveal .hljs-constructor, .reveal .hljs-module-access, .reveal .hljs-module {
   color: #FFD007;
+}
+.reveal .colophon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1;
+}
+.reveal .colophon::after {
+  content: "";
+  display: block;
+  width: 15vw;
+}
+.reveal .colophon__logo {
+  width: 15vw;
+}
+.reveal .colophon__logo svg {
+  height: 8vh;
+  width: auto;
+  fill: #112378;
+}
+.reveal .colophon__link {
+  opacity: 0.75;
+  font-family: "ibm-plex-mono", Operator Mono, monospace;
+  font-style: italic;
+  font-size: 0.6666666667em;
 }
 
 /*********************************************
