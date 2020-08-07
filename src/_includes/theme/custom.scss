@@ -67,88 +67,91 @@ section.has-light-background {
 	}
 }
 
-.reveal section {
-  h2, h2, h4, h5, h6 {
-    font-family: $codeFont;
-    text-transform: none;
-    font-weight: 800;
-  }
-
-  h2 + h3 {
-    font-family: $mainFont;
-    text-transform: none;
-    font-weight: 400;
-  }
-
-  h2 .h1 {
-    margin-bottom: .125em;
-    padding-bottom: .125em;
-    display: block;
-    font-family: $headingFont;
-    font-size: 1.6em;
-    border-bottom: .15em solid currentColor;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    em {
-      font-style: italic;
-      border-bottom: .125em solid currentColor;
+.reveal {
+  section {
+    h2, h2, h4, h5, h6 {
+      font-family: $codeFont;
+      text-transform: none;
+      font-weight: 800;
     }
-  }
 
-  a {
-    &,
-    &:hover,
-    &:active {
-      text-decoration: underline !important;
+    h2 + h3 {
+      font-family: $mainFont;
+      text-transform: none;
+      font-weight: 400;
     }
-  }
 
-  code {
-    font-size: 0.9em;
-  }
+    h2 .h1 {
+      margin-bottom: .125em;
+      padding-bottom: .125em;
+      display: block;
+      font-family: $headingFont;
+      font-size: 1.6em;
+      border-bottom: .15em solid currentColor;
+    }
 
-  pre {
-    padding: 1ch;
-    box-sizing: border-box;
-    background-color: $mainColor;
-    color: $preColor;
+    h1, h2, h3, h4, h5, h6 {
+      em {
+        font-style: italic;
+        border-bottom: .125em solid currentColor;
+      }
+    }
+
+    a {
+      &,
+      &:hover,
+      &:active {
+        text-decoration: underline !important;
+      }
+    }
 
     code {
-      max-height: 100%;
+      font-size: 0.9em;
+    }
+
+    pre {
+      padding: 1ch;
       box-sizing: border-box;
-      font-size: $mainFontSize;
-      line-height: 1.2;
-      overflow-x: scroll;
-      overflow-y: visible;
+      background-color: $mainColor;
+      color: $preColor;
+
+      code {
+        max-height: 100%;
+        box-sizing: border-box;
+        font-size: $mainFontSize;
+        line-height: 1.2;
+        overflow-x: scroll;
+        overflow-y: visible;
+      }
+
+      mark {
+        padding: 0 .25em;
+        font-weight: 800;
+        color: #fff;
+        background-color: rgba(#000, .2);
+      }
     }
 
-    mark {
-      padding: 0 .25em;
-      font-weight: 800;
-      color: #fff;
-      background-color: rgba(#000, .2);
+    ul,
+    ol {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 40rem;
     }
-  }
 
-  ul,
-  ol {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 40rem;
-  }
+    p {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 40rem;
 
-  p {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 40rem;
-
-    &:first-child:last-child {
-      font-size: $heading3Size;
+      &:first-child:last-child {
+        font-size: $heading3Size;
+      }
     }
   }
 
   @import "code";
+  @import "colophon";
 }
 
 
