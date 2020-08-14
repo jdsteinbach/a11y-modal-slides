@@ -121,10 +121,12 @@ section.has-light-background, section.has-light-background h1, section.has-light
   fill: #112378;
 }
 .reveal .colophon__link {
+  padding: 0.5em 1em 0.7em;
   opacity: 0.75;
   font-family: "ibm-plex-mono", Operator Mono, monospace;
   font-style: italic;
   font-size: 0.6666666667em;
+  background-color: #17C37B;
 }
 
 /*********************************************
