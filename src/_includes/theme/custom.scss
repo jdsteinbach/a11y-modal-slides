@@ -73,6 +73,10 @@ section.has-light-background {
       font-family: $codeFont;
       text-transform: none;
       font-weight: 800;
+
+      + p {
+        margin-top: $heading2Size;
+      }
     }
 
     h2 + h3 {
@@ -110,6 +114,8 @@ section.has-light-background {
     }
 
     pre {
+      display: inline-block;
+      width: auto;
       padding: 1ch;
       box-sizing: border-box;
       background-color: $mainColor;
@@ -147,6 +153,14 @@ section.has-light-background {
       &:first-child:last-child {
         font-size: $heading3Size;
       }
+    }
+
+    i, em {
+      font-style: italic;
+    }
+
+    b, strong {
+      font-weight: bold;
     }
   }
 

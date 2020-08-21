@@ -16,6 +16,9 @@ section.has-light-background, section.has-light-background h1, section.has-light
   text-transform: none;
   font-weight: 800;
 }
+.reveal section h2 + p, .reveal section h2 + p, .reveal section h4 + p, .reveal section h5 + p, .reveal section h6 + p {
+  margin-top: 2.56em;
+}
 .reveal section h2 + h3 {
   font-family: "canada-type-gibson", Helvetica, sans-serif;
   text-transform: none;
@@ -40,6 +43,8 @@ section.has-light-background, section.has-light-background h1, section.has-light
   font-size: 0.9em;
 }
 .reveal section pre {
+  display: inline-block;
+  width: auto;
   padding: 1ch;
   box-sizing: border-box;
   background-color: #112378;
@@ -72,6 +77,12 @@ section.has-light-background, section.has-light-background h1, section.has-light
 }
 .reveal section p:first-child:last-child {
   font-size: 1.6em;
+}
+.reveal section i, .reveal section em {
+  font-style: italic;
+}
+.reveal section b, .reveal section strong {
+  font-weight: bold;
 }
 .reveal .hljs-keyword, .reveal .hljs-built_in, .reveal .hljs-type, .reveal .hljs-literal, .reveal .hljs-number, .reveal .hljs-regexp, .reveal .hljs-string, .reveal .hljs-subst, .reveal .hljs-symbol, .reveal .hljs-class, .reveal .hljs-function, .reveal .hljs-title, .reveal .hljs-params {
   color: #17C37B;
