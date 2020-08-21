@@ -13,7 +13,11 @@
     "11ty",
     "reveal",
     "slides",
-    "reveal.js"
+    "reveal.js",
+    "a11y",
+    "accessibility",
+    "modal",
+    "dialog"
   ],
   "author": "James Steinbach",
   "license": "ISC",
