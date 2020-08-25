@@ -1,7 +1,7 @@
 {
-  "name": "11ty-reveal",
-  "version": "1.0.0",
-  "description": "Eleventy Starter Repo for Reveal.js slide decks",
+  "name": "a11y-modal-slides",
+  "version": "1.0.1",
+  "description": "Modal Windows for Everyone: CascadiaJS 2020 Slides",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
