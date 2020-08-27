@@ -43,38 +43,7 @@
 
         
           <section >
-  <h2>Maybe <em>not</em> a Modal</h2>
-<p>(<a href="https://modalzmodalzmodalz.com/">Modalz, Modalz, Modalz</a>)</p>
-
-</section>
-
-        
-          <section >
-  <p>Display content inline whenever possible.</p>
-
-</section>
-
-        
-          <section >
-  <p>Put content on its own route / page.</p>
-
-</section>
-
-        
-          <section >
-  <p>Don’t open a modal from another modal.</p>
-
-</section>
-
-        
-          <section data-background="images/inception.gif">
-  <h1 style="font-size:6.7em" aria-hidden="true">🚫</h1>
-
-</section>
-
-        
-          <section >
-  <h3>Modal Dialog</h3>
+  <h2>Modal Dialog</h2>
 <ul>
 <li>A “pop-up” (takes over the <em>mode</em> of the page)</li>
 <li>Containing interactive content</li>
@@ -133,7 +102,7 @@
   Open {Modal Name}
 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
-<p><em>(<a href="https://heydonworks.com/article/aria-controls-is-poop/"><code>aria-controls</code></a> is poop)</em></p>
+<p>“<a href="https://heydonworks.com/article/aria-controls-is-poop/"><code>aria-controls</code> Is Poop</a>”</p>
 
 </section>
 
@@ -181,29 +150,16 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td><code>aria-hidden=&quot;true&quot;</code></td>
-</tr>
-<tr>
 <td><code>open</code></td>
 <td><code>inert</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>aria-hidden=&quot;true&quot;</code></td>
 </tr>
 </tbody>
 </table>
 <p><em>Future Feature:</em> <a href="https://github.com/WICG/inert"><code>inert</code> polyfill</a></p>
-
-</section>
-
-        
-          <section >
-  <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"openModal"</span>&gt;</span>
-  Open Modal
-<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"closeModal"</span>&gt;</span>
-  Close Modal
-<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-</code></pre>
 
 </section>
 
@@ -237,9 +193,9 @@
           <section >
   <h3>Focus</h3>
 <ol>
-<li><em>On open,</em> focus on modal title <em>or</em> modal container.</li>
-<li><em>While open,</em> <a href="https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/dialog-modal/js/dialog.js">trap focus inside modal</a>.</li>
-<li><em>On close,</em> restore focus to open button.</li>
+<li><em>On open,</em> focus on modal title <em>or</em> modal container (<code>tabindex=&quot;0&quot;</code>)</li>
+<li><em>While open,</em> <a href="https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/dialog-modal/js/dialog.js">trap focus inside modal</a></li>
+<li><em>On close,</em> restore focus to open button (<code>[aria-controls=&quot;id&quot;]</code>)</li>
 </ol>
 
 </section>
@@ -302,6 +258,13 @@
   <h3>CSS-only Modals?</h3>
 <p><span style="font-size:4em">🙅</span></p>
 <p>These are “clever,” but don’t communicate state to screen readers.</p>
+
+</section>
+
+        
+          <section >
+  <h3>Progressive Enhancement</h3>
+<p>Put modal contents on a separate page. Put them in a <code>dialog</code> when JS works.</p>
 
 </section>
 
