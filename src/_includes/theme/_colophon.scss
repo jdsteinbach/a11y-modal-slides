@@ -8,6 +8,7 @@
   left: 20px;
   z-index: 1;
 
+  &::before,
   &::after {
     content: '';
     display: block;
@@ -16,6 +17,7 @@
 }
 
 .colophon__logo {
+  display: none;
   width: 15vw;
 
   svg {

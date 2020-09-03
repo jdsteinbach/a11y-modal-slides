@@ -127,7 +127,7 @@ section.has-light-background {
       padding: 1ch;
       box-sizing: border-box;
       box-shadow: none;
-      border: 4px solid $headingColor;
+      background-color: rgba(#dac935, .1);
       color: $preColor;
 
       code {
