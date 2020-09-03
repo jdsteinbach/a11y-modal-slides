@@ -53,6 +53,37 @@
 
         
           <section >
+  <h2>Maybe <em>not</em> a Modal</h2>
+<p>(<a href="https://modalzmodalzmodalz.com/">Modalz, Modalz, Modalz</a>)</p>
+
+</section>
+
+        
+          <section >
+  <p>Display content inline whenever possible.</p>
+
+</section>
+
+        
+          <section >
+  <p>Put content on its own route / page.</p>
+
+</section>
+
+        
+          <section >
+  <p>Don’t open a modal from another modal.</p>
+
+</section>
+
+        
+          <section data-background="images/inception.gif">
+  <h1 style="font-size:6.7em" aria-hidden="true">🚫</h1>
+
+</section>
+
+        
+          <section >
   <h2><span class="h1">HTML</span> Accessibility</h2>
 
 </section>
@@ -76,7 +107,7 @@
           <section >
   <h3>Semantics: <br/>the element is a modal dialog</h3>
 <ul>
-<li><a href="https://www.scottohara.me/blog/2019/03/05/open-dialog.html"><code>&lt;dialog&gt;</code></a></li>
+<li><a href="https://www.scottohara.me/blog/2019/03/05/open-dialog.html"><code>&lt;dialog&gt;</code></a> (<a href="https://github.com/GoogleChrome/dialog-polyfill">polyfill</a>)</li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role"><code>role=&quot;dialog&quot;</code></a></li>
 <li><a href="https://www.w3.org/TR/wai-aria-practices/examples/dialog-modal/dialog.html#rps_label"><code>aria-modal=&quot;true&quot;</code></a></li>
 </ul>
@@ -122,9 +153,25 @@
         
           <section >
   <h3>Visibility: Buttons</h3>
+<p>Close Button (remixed)</p>
+<pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"sr-only"</span>&gt;</span>
+    Close {Modal Name}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- × --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+
+</section>
+
+        
+          <section >
+  <h3>Visibility: Buttons</h3>
 <p>Scrim (optional), outside of Modal</p>
 <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"screen-reader-only"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"sr-only"</span>&gt;</span>
     Close {Modal Name}
   <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
@@ -193,7 +240,7 @@
           <section >
   <h3>Focus</h3>
 <ol>
-<li><em>On open,</em> focus on modal title <em>or</em> modal container (<code>tabindex=&quot;0&quot;</code>)</li>
+<li><em>On open,</em> focus on modal title <em>or</em> content wrapper in modal (<code>tabindex=&quot;0&quot;</code>)</li>
 <li><em>While open,</em> <a href="https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/dialog-modal/js/dialog.js">trap focus inside modal</a></li>
 <li><em>On close,</em> restore focus to open button (<code>[aria-controls=&quot;id&quot;]</code>)</li>
 </ol>
@@ -239,7 +286,20 @@
 <li><code>opacity</code></li>
 <li><code>transform</code></li>
 </ul>
+
+</section>
+
+        
+          <section >
+  <h3>Motion Accessibility</h3>
 <p>Respect <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion">motion preferences</a>.</p>
+<pre><code class="hljs language-css"><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">prefers-reduced-motion:</span> true) {
+  * {
+    <span class="hljs-attribute">transition-duration</span>: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;
+    <span class="hljs-attribute">animation-duration</span>: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;
+  }
+}
+</code></pre>
 
 </section>
 
@@ -247,8 +307,12 @@
           <section >
   <h3>Handle Scrolling Well</h3>
 <ul>
-<li><a href="https://css-tricks.com/considerations-styling-modal/#dealing-with-overflow">Scroll inside the modal</a></li>
-<li><a href="https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/">Prevent scrolling on <code>body</code></a></li>
+<li><a href="https://css-tricks.com/considerations-styling-modal/#dealing-with-overflow">Scroll inside the modal</a>
+<ul>
+<li><code>overflow-y: auto</code></li>
+</ul>
+</li>
+<li><a href="https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/">Prevent scrolling on <code>body</code></a> while the modal is open</li>
 </ul>
 
 </section>
@@ -264,7 +328,8 @@
         
           <section >
   <h3>Progressive Enhancement</h3>
-<p>Put modal contents on a separate page. Put them in a <code>dialog</code> when JS works.</p>
+<p>Put modal markup on its own page.</p>
+<p>Put them in a <code>dialog</code> when JS works.</p>
 
 </section>
 
@@ -272,6 +337,7 @@
           <section >
   <h2>Resources</h2>
 <ul>
+<li><a href="https://jdsteinbach.com/a11y-modal-demo/">Demo</a></li>
 <li>Spec: <a href="https://www.w3.org/TR/wai-aria-practices/#dialog_modal">W3 Aria Dialog Modal</a></li>
 <li>Post: “<a href="https://developer.paciellogroup.com/blog/2018/06/the-current-state-of-modal-dialog-accessibility/">Current State of Modal Dialog Accessibility</a>” by Scott O’Hara (2018)</li>
 <li>Course: <a href="https://egghead.io/lessons/aria-accessible-modal-dialogs">Accessible Modal Dialogs</a> with Marcy Sutton</li>
@@ -289,7 +355,7 @@
         
           <section >
   <h2>James Steinbach</h2>
-<h3>Senior UX Developer<br /> at <a rel="noreferrer noopener nofollow" target="_blank" href="https://dockyard.com/blog/authors/james-steinbach">DockYard</a><svg style="margin-left:.5ch;max-height:1em;vertical-align:middle;display:inline-block" viewBox="0 0 1023 1024" class="logo--dockyard" fill="#fff"><path d="M511.413 0c-282.422 0-511.413 228.991-511.413 512 0 282.422 228.991 511.413 511.413 511.413s511.413-228.991 511.413-511.413c0.587-283.009-228.404-512-511.413-512zM808.514 202.569c0 1.761-1.761 4.697-5.284 8.807-9.394 10.569-110.972 123.89-148.55 162.642 16.44 42.275 16.44 115.083 10.569 185.541-8.22 99.229-21.138 139.156-75.156 169.688s-201.982 34.642-275.963 16.44c-73.982-18.202-83.376-92.183-90.422-95.119-28.771-12.33-25.248-58.128-25.248-58.128 20.55-1.174 40.514 24.073 40.514 24.073 8.22-12.917 32.294-25.248 32.294-25.248 11.156 39.339-12.33 52.844-9.982 58.128 5.872 14.679 37.578 49.908 87.486 24.073 49.908-25.248 51.67-94.532 54.606-179.67s25.248-153.248 98.642-169.688c56.367-12.33 96.881 1.761 115.083 10.569 50.495-36.991 165.578-119.193 175.56-126.239 4.697-2.936 8.22-5.284 10.569-6.459h5.284c0 0 0 0 0 0.587v0z"></path><path d="M473.835 577.174c-16.44 22.899-21.138 44.037-31.706 69.284-8.807 19.963-23.486 29.358-34.642 45.798-9.394 14.092 20.55 18.789 28.771 19.376 21.725.587 45.798-10.569 58.716-27.596 17.615-24.073 19.376-46.972 31.706-72.22 6.459-13.505 26.422-39.339 27.596-51.67 2.936-23.486-56.367-16.44-80.44 17.028zM532.55 392.807c-11.743 4.11-18.202 16.44-14.092 28.183 3.523 11.743 16.44 18.202 27.596 14.092 11.743-4.11 18.202-16.44 14.092-28.183-3.523-11.156-16.44-17.615-27.596-14.092z"></path></svg></h3>
+<h3>Senior UX Developer<br /> at <a rel="noreferrer noopener nofollow" target="_blank" href="https://dockyard.com/blog/authors/james-steinbach">DockYard</a><svg style="margin-left:.5ch;max-height:1em;vertical-align:middle;display:inline-block" viewBox="0 0 1023 1024" class="logo--dockyard" fill="#000"><path d="M511.413 0c-282.422 0-511.413 228.991-511.413 512 0 282.422 228.991 511.413 511.413 511.413s511.413-228.991 511.413-511.413c0.587-283.009-228.404-512-511.413-512zM808.514 202.569c0 1.761-1.761 4.697-5.284 8.807-9.394 10.569-110.972 123.89-148.55 162.642 16.44 42.275 16.44 115.083 10.569 185.541-8.22 99.229-21.138 139.156-75.156 169.688s-201.982 34.642-275.963 16.44c-73.982-18.202-83.376-92.183-90.422-95.119-28.771-12.33-25.248-58.128-25.248-58.128 20.55-1.174 40.514 24.073 40.514 24.073 8.22-12.917 32.294-25.248 32.294-25.248 11.156 39.339-12.33 52.844-9.982 58.128 5.872 14.679 37.578 49.908 87.486 24.073 49.908-25.248 51.67-94.532 54.606-179.67s25.248-153.248 98.642-169.688c56.367-12.33 96.881 1.761 115.083 10.569 50.495-36.991 165.578-119.193 175.56-126.239 4.697-2.936 8.22-5.284 10.569-6.459h5.284c0 0 0 0 0 0.587v0z"></path><path d="M473.835 577.174c-16.44 22.899-21.138 44.037-31.706 69.284-8.807 19.963-23.486 29.358-34.642 45.798-9.394 14.092 20.55 18.789 28.771 19.376 21.725.587 45.798-10.569 58.716-27.596 17.615-24.073 19.376-46.972 31.706-72.22 6.459-13.505 26.422-39.339 27.596-51.67 2.936-23.486-56.367-16.44-80.44 17.028zM532.55 392.807c-11.743 4.11-18.202 16.44-14.092 28.183 3.523 11.743 16.44 18.202 27.596 14.092 11.743-4.11 18.202-16.44 14.092-28.183-3.523-11.156-16.44-17.615-27.596-14.092z"></path></svg></h3>
 <h2><code>jdsteinbach</code></h2>
 <h3><a rel="noreferrer noopener nofollow" target="_blank" href="https://twitter.com">Twitter</a> | <a rel="noreferrer noopener nofollow" target="_blank" href="https://github.com/jdsteinbach">GitHub</a> | <a href="https://jdsteinbach.com">Blog</a></h3>
 
@@ -300,13 +366,13 @@
 
       <footer class="colophon">
         <div class="colophon__logo">
-          <svg xmlns="http://www.w3.org/2000/svg" width="50.18" height="56" viewBox="0 0 50.18 56" focusable="false" aria-label="CascadiaJS 2020">
-            <rect width="50.18" height="56" fill="#17C37B" />
-            <path d="M25.09 13.88l4.98 4.98 1.25-1.24-6.23-6.23-6.23 6.23 1.25 1.24 4.98-4.98z"/>
-            <path d="M25.09 18.86l8.72 8.72 1.24-1.24-9.96-9.96-9.96 9.96 1.25 1.24 8.71-8.72z"/>
-            <path d="M25.09 23.85L37.54 36.3l1.25-1.25-13.7-13.69-13.7 13.69 1.25 1.25z"/>
-            <path d="M15.13 36.3l1.25 1.24 8.71-8.71 8.72 8.71 1.24-1.24-9.96-9.96-9.96 9.96z"/>
-            <path d="M48.29 0H0v56h50.18V0zm0 54.1H26V34.67l4.11 4.12 1.25-1.25-6.23-6.22-6.23 6.22 1.25 1.25 4.05-4.09v19.4H1.9V1.9h46.39z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -200 3848 1800" focusable="false" aria-label="Front Range Front-End">
+            <g fill-rule="evenodd">
+              <path fill="#60569C" d="M1735.64 0L507.27 1750.66h174.1L1803.34 154.74h19.35l1121.96 1595.93h174.1L1890.36 0h-154.72z"></path>
+              <path fill="#60569C" d="M1881.3 947.64L2209.45 441H2034.9L1817 788.83h-5.25l-217.88-347.8H1419.3l328.14 506.63h133.87z"></path>
+              <path fill="#5C6443" d="M2753.76 467.26l-947.5 1361.57h179.06l835.6-1201.16h14.9l835.6 1201.16h179.06l-947.5-1361.57h-149.22z"></path>
+              <path fill="#2C313E" d="M600.2 925.04L41.05 1749.4h174.6l448.62-665.22h8.83l448.66 665.2h174.57L737.2 925.05h-137z"></path>
+            </g>
           </svg>
         </div>
 

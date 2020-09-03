@@ -31,12 +31,17 @@ $green:     #859900;
 
 
 // Override theme settings (see ../template/settings.scss)
-$backgroundColor: #17C37B;
+// $backgroundColor: #17C37B;
+$backgroundColor: #ebecf0;
 
-$mainColor: #112378;
-$headingColor: $mainColor;
+// $mainColor: #112378;
+// $headingColor: $mainColor;
+$mainColor: #2c313e;
+$headingColor: #60569c;
 
-$preColor: #FFD007;
+// $preColor: #ebecf0;
+$preColor: #dac935;
+$preColor: #5c6443;
 
 $mainFontSize: 40px;
 $mainFont: 'canada-type-gibson', Helvetica, sans-serif;
@@ -45,8 +50,10 @@ $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
 $headingFontWeight: 700;
-$linkColor: #112378;
-$linkColorHover: #0033FF;
+// $linkColor: #112378;
+$linkColor: #5c6443;
+// $linkColorHover: #0033FF;
+$linkColorHover: #60569c;
 $selectionBackgroundColor: lighten($linkColor, 25%);
 $codeFont: 'ibm-plex-mono', Operator Mono, monospace;
 
@@ -83,6 +90,7 @@ section.has-light-background {
       font-family: $mainFont;
       text-transform: none;
       font-weight: 400;
+      color: $mainColor;
     }
 
     h2 .h1 {
@@ -118,7 +126,8 @@ section.has-light-background {
       width: auto;
       padding: 1ch;
       box-sizing: border-box;
-      background-color: $mainColor;
+      box-shadow: none;
+      border: 4px solid $headingColor;
       color: $preColor;
 
       code {
